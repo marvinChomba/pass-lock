@@ -51,7 +51,7 @@ class TestPass(unittest.TestCase):
 
     def test_delete(self):
         self.new_password.save_pass()
-        new_pass = Password("Twitter","mck",Password.generate_pass(9))
+        new_pass = Password("Twitter","mck",Password.generate_pass(8))
         new_pass.save_pass()
         Password.delete_password("Facebook")
         self.assertEqual(len(Password.passwords),1)
