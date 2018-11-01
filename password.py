@@ -42,12 +42,12 @@ class Password:
      
     def delete_password(account):
         for password in Password.passwords:
-            if password.account.lower() == account:
+            if password.account.lower() == account.lower():
                 Password.passwords.remove(password)
     
     @classmethod
     def password_exist(cls,acc):
         for password in cls.passwords:
-            if password.account == acc:
+            if password.account.lower() == acc.lower():
                 return True
         return False
