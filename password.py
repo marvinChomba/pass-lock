@@ -1,4 +1,4 @@
-
+from random import randint
 class Password:
     """
     This is the class which we will use to create the passwords
@@ -18,6 +18,25 @@ class Password:
         """
         Password.passwords.append(self)
 
-        
+    def generate_pass(length):
+        """
+        This function will generate a new and random pass for the user
+        Args:
+            length - the length of the password
+        Return:
+            a random password of specified length
+        """
+        items = ["a","b","c","d","e","k","n","q","p","v","x","z","1","2","4","5","7","8","0"]
+        new_pass = ""
+        while(len(new_pass) < length):
+            item = items[randint(0,len(items) -1)]
+            new_pass += item
+        return new_pass
 
-    
+    @classmethod
+    def display_passwords(cls):
+        """
+        This function will return all the passwords in the list
+        """
+        return cls.passwords
+     
