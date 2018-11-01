@@ -3,7 +3,7 @@ from user import User
 
 class TestUser(unittest.TestCase):
     """
-    This is a class that will contain all the tests for the User class
+    This is a class that will contain all the tests for the user class
     """
     def setUp(self):
         """
