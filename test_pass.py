@@ -53,7 +53,7 @@ class TestPass(unittest.TestCase):
         self.new_password.save_pass()
         new_pass = Password("Twitter","mck",Password.generate_pass(8))
         new_pass.save_pass()
-        Password.delete_password("Facebook")
+        Password.delete_password("facebook")
         self.assertEqual(len(Password.passwords),1)
 if __name__ == "__main__":
     unittest.main()

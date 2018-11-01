@@ -42,5 +42,10 @@ class Password:
      
     def delete_password(account):
         for password in Password.passwords:
-            if password.account == account:
+            if password.account.lower() == account:
                 Password.passwords.remove(password)
+    
+    @classmethod
+    def password_exist(acc):
+        for password in Password.passwords:
+            if 

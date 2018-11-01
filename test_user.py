@@ -19,6 +19,9 @@ class TestUser(unittest.TestCase):
         self.assertEqual(self.new_user.password,"1234")
 
     def test_user_pass(self):
+        """
+        Will test whether the user exists
+        """
         self.assertTrue(User.user_exists)
 if __name__ == "__main__":
     unittest.main()
