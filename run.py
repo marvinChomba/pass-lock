@@ -67,32 +67,38 @@ def main():
 
             add_password(acc,u_name,password)
 
-            print(f"New password for {acc} added")
+            print(f"New password for {acc} added\n")
         elif command == "generate":
             print("I love generating password for you!")
             acc = input("Which platform is the password for?\n")
             u_name = input("What is your username?\n")
             length = input("What is the length of the password you would like me to generate\n")
-            add_password(acc,u_name,generate_password(int(length)))
-            print(f"New password for {acc} generated")
+            try:     
+                add_password(acc,u_name,generate_password(int(length)))
+                print(f"New password for {acc} generated\n")
+            except ValueError:
+                print("Please use numbers only\n")
         elif command == "del":
             print("Oh no!:(\n")
             acc= input("Which account would you like to delete their password?\n")
             if password_exists(acc):
                 delete_password(acc)
-                print(f"{acc} password deleted")
+                print(f"{acc} password deleted\n")
             else:
-                print("Password doesn't exist")
+                print("Password doesn't exist\n")
         elif command == "view":
-            pass_word = input("Enter your password")
-            if view_passwords():
-                for password in view_passwords():
-                    print("-"*6,view_passwords().index(password)+1,"-"*6,"\n")
-                    print(f"Account --> {password.account}\n")
-                    print(f"Username --> {password.username}\n")
-                    print(f"Password --> {password.password}\n")
+            pass_word = input("Enter your password\n")
+            if pass_word == user_pass:
+                if view_passwords():
+                    for password in view_passwords():
+                        print("-"*6,view_passwords().index(password)+1,"-"*6,"\n")
+                        print(f"Account --> {password.account}\n")
+                        print(f"Username --> {password.username}\n")
+                        print(f"Password --> {password.password}\n")
+                else:
+                    print("You have no passwords\n")
             else:
-                print("You have no passwords")
+                print("Wrong password. You can't view the passwords. Try again\n")
         elif command == "exit":
             print("Please stay")
             break
