@@ -46,6 +46,8 @@ class Password:
                 Password.passwords.remove(password)
     
     @classmethod
-    def password_exist(acc):
-        for password in Password.passwords:
-            if 
+    def password_exist(cls,acc):
+        for password in cls.passwords:
+            if password.account == acc:
+                return True
+        return False

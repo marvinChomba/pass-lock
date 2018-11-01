@@ -55,5 +55,9 @@ class TestPass(unittest.TestCase):
         new_pass.save_pass()
         Password.delete_password("facebook")
         self.assertEqual(len(Password.passwords),1)
+
+    def test_pass_exist(self):
+        self.new_password.save_pass()
+        self.assertTrue(Password.password_exist("Facebook"))
 if __name__ == "__main__":
     unittest.main()

@@ -37,6 +37,10 @@ def delete_password(acc):
     """
     Password.delete_password(acc)
 
+def password_exists(acc):
+    return Password.password_exist(acc)
+
+    
 def main():
     """
     This is where the user will run all their functions
@@ -74,11 +78,16 @@ def main():
         elif command == "del":
             print("Oh no!:(\n")
             acc= input("Which account would you like to delete their password?\n")
-            delete_password(acc)
+            if password_exists(acc):
+                delete_password(acc)
+                print(f"{acc} password deleted")
+            else:
+                print("Password doesn't exist")
         elif command == "view":
+            pass_word = input("Enter your password")
             if view_passwords():
                 for password in view_passwords():
-                    print("-"*6,view_passwords().index(password),"-"*6,"\n")
+                    print("-"*6,view_passwords().index(password)+1,"-"*6,"\n")
                     print(f"Account --> {password.account}\n")
                     print(f"Username --> {password.username}\n")
                     print(f"Password --> {password.password}\n")
