@@ -40,3 +40,7 @@ class Password:
         """
         return cls.passwords
      
+    def delete_password(account):
+        for password in Password.passwords:
+            if password.account == account:
+                Password.passwords.remove(password)
