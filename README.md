@@ -49,6 +49,6 @@ To access this application on your command line, you need to clone it
 Currently, there are no known bugs
 
 ### Licence
-This project is under the [MIT](https://github.com/marvinChomba/pass-locker/blob/master/LICENSE) licence
+This project is under the [MIT](https://github.com/marvinChomba/pass-lock/blob/master/LICENSE) licence
 
 Copyright (c) 2018 marvinchomba
