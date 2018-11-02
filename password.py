@@ -3,10 +3,10 @@ class Password:
     """
     This is the class which we will use to create the passwords
     """
-    passwords = []
+    passwords = [] # a list which will store all the user's passwords
     def __init__(self,account,username,password):
         """
-        This function will allow the user to create instances of the class with unique details
+        This function will allow the user to create instances of the class with unique details in each instance
         """
         self.account = account
         self.username = username
@@ -40,13 +40,26 @@ class Password:
         """
         return cls.passwords
      
-    def delete_password(account):
-        for password in Password.passwords:
+    @classmethod
+    def delete_password(cls,account):
+        """
+        This function will delete the user's password from the passwords list
+        Args:
+            account - this is the account of the password the user ants to delete
+        """
+        for password in cls.passwords:
             if password.account.lower() == account.lower():
-                Password.passwords.remove(password)
+                cls.passwords.remove(password)
     
     @classmethod
     def password_exist(cls,acc):
+        """
+        This function will check whether a password exists
+        Args:
+         Acc- this is the account that the user wants to confirm its password
+        Return:
+            True or False
+        """
         for password in cls.passwords:
             if password.account.lower() == acc.lower():
                 return True

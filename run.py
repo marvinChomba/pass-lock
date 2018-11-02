@@ -80,7 +80,7 @@ def main():
                 print("Please use numbers only\n")
         elif command == "del":
             print("Oh no!:(\n")
-            pass_word = input("Enter your password\n")
+            pass_word = getpass.getpass("Enter your password?\n")
             if pass_word == user_pass:
                 acc= input("Which account would you like to delete their password?\n")
                 if password_exists(acc):
@@ -91,7 +91,7 @@ def main():
             else:
                 print("\nOh no. Wrong password. Try Again\n")
         elif command == "view":
-            pass_word = input("Enter your password\n")
+            pass_word = getpass.getpass("Enter your password?\n")
             if pass_word == user_pass:
                 if view_passwords():
                     for password in view_passwords():
