@@ -7,7 +7,7 @@ class TestPass(unittest.TestCase):
     """
     def setUp(self):
         """
-        This function will create a new instance of Password
+        This function will create a new instance of Password before each test
         """
         self. new_password = Password("Facebook","marvin-j","kkk")
     
@@ -19,7 +19,7 @@ class TestPass(unittest.TestCase):
 
     def test_new_pass(self):
         """
-        This will test whether a new password is added correctly
+        This will test whether a new password is instantiated correctly
         """
         self.assertEqual(self.new_password.account,"Facebook")
         self.assertEqual(self.new_password.username,"marvin-j")
@@ -56,6 +56,9 @@ class TestPass(unittest.TestCase):
         self.assertEqual(len(Password.passwords),len(Password.display_passwords()))
 
     def test_delete(self):
+        """
+        This test will check whether the password gets deleted from the passwords list
+        """
         self.new_password.save_pass()
         new_pass = Password("Twitter","mck",Password.generate_pass(8))
         new_pass.save_pass()
@@ -63,6 +66,9 @@ class TestPass(unittest.TestCase):
         self.assertEqual(len(Password.passwords),1)
 
     def test_pass_exist(self):
+        """
+        This test will check whether the password_exists function works
+        """
         self.new_password.save_pass()
         self.assertTrue(Password.password_exist("Facebook"))
 
