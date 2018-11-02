@@ -25,7 +25,7 @@ class TestPass(unittest.TestCase):
         self.assertEqual(self.new_password.username,"marvin-j")
         self.assertEqual(self.new_password.password,"kkk")
 
-    def test_save_pass(self): 
+    def test_save_new_pass(self): 
         """
         This will check whether the new password is added to the passwords list
         """

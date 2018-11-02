@@ -26,7 +26,7 @@ class Password:
         Return:
             a random password of specified length
         """
-        items = ["a","b","c","d","e","k","n","q","p","v","x","z","1","2","4","5","7","8","0"]
+        items = ["a","b","c","d","e","k","n","q","p","v","x","z","1","2","4","5","7","8","0","_","-","l","r","y"]
         new_pass = ""
         while(len(new_pass) < length):
             item = items[randint(0,len(items) -1)]

@@ -58,6 +58,12 @@ def main():
     """
     This is where the user will run all their functions
     """
+    print("___                                     _     __            _    ")        
+    print("/ _ \__ _ ___ _____      _____  _ __ __| |   / /  ___   ___| | _____ _ __ ")
+    print("/ /_)/ _` / __/ __\ \ /\ / / _ \| '__/ _` |  / /  / _ \ / __| |/ / _ \ '__|")
+    print("/ ___/ (_| \__ \__ \\ V  V / (_) | | | (_| | / /__| (_) | (__|   <  __/ |  ") 
+    print("\/    \__,_|___/___/ \_/\_/ \___/|_|  \__,_| \____/\___/ \___|_|\_\___|_|\n\n")
+
     print("Welcome to PASSWORD LOCKER. We help you manage your passwords so that you can worry about things that matter\n")
     print("-"*6,"SIGN UP","-"*6,"\n")
 
@@ -117,7 +123,8 @@ def main():
             else:
                 print("Wrong password. You can't view the passwords. Try again\n")
         elif command == "exit":
-            print("Please stay")
+            print("Please stay:(")
+            print("Bye")
             break
 
 if __name__ == "__main__":
