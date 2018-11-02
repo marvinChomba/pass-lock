@@ -4,7 +4,7 @@
 Marvin Chomba
 
 ### Description
- An application that allows users to generate and store passwords for various accounts.
+ An application that allows users to generate and store passwords for various accounts.They can also view and delete passwords
 
  ### User Stories :family:
 1. As a user, I would like to create a password locker account with my details - log in and password
