@@ -1,7 +1,7 @@
 #!/usr/bin/env python3.6
 from password import Password
 from user import User
-import getpass
+import getpass #to hide the pass
 def new_user(login,password):
     """
     This will create a new user everytime they login
@@ -13,7 +13,7 @@ def new_user(login,password):
 
 def add_password(account,username,password):
     """
-    This is a function that will add a new password
+    This is a function that will add a new password to the passwords list
     """
     new_pass = Password(account,username,password)
     new_pass.save_pass()
@@ -21,6 +21,10 @@ def add_password(account,username,password):
 def generate_password(length):
     """
     This will create a random password for the user
+    Args:
+        length - the user's preferred length for the password
+    Return:
+        It will return a random password of user's preferred length
     """
     return Password.generate_pass(length)
 
@@ -39,6 +43,13 @@ def delete_password(acc):
     Password.delete_password(acc)
 
 def password_exists(acc):
+    """
+    It will check whether a password exists
+    Args:
+        acc- the password's account
+    Return:
+        True or False
+    """
     return Password.password_exist(acc)
 
 def main():
