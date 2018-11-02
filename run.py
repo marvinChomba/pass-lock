@@ -1,7 +1,7 @@
 #!/usr/bin/env python3.6
 from password import Password
 from user import User
-
+import getpass
 def new_user(login,password):
     """
     This will create a new user everytime they login
@@ -41,16 +41,15 @@ def delete_password(acc):
 def password_exists(acc):
     return Password.password_exist(acc)
 
-    
 def main():
     """
     This is where the user will run all their functions
     """
     print("Welcome to PASSWORD LOCKER. We help you manage your passwords so that you can worry about things that matter\n")
-    print("-"*6,"REGISTER","-"*6,"\n")
+    print("-"*6,"SIGN UP","-"*6,"\n")
 
     user_name = input("User Name\n")
-    user_pass = input("Password\n")
+    user_pass = getpass.getpass('Password:\n')
 
     new_user(user_name,user_pass)
 
@@ -64,7 +63,7 @@ def main():
             print("Oh cool. I love new passwords\n")
             acc = input("Which platform is the password for?\n")
             u_name = input("What is your username?\n")
-            password = input("What is your password?\n")
+            password = getpass.getpass("What is your password?\n")
 
             add_password(acc,u_name,password)
 
@@ -81,12 +80,16 @@ def main():
                 print("Please use numbers only\n")
         elif command == "del":
             print("Oh no!:(\n")
-            acc= input("Which account would you like to delete their password?\n")
-            if password_exists(acc):
-                delete_password(acc)
-                print(f"{acc} password deleted\n")
+            pass_word = input("Enter your password\n")
+            if pass_word == user_pass:
+                acc= input("Which account would you like to delete their password?\n")
+                if password_exists(acc):
+                    delete_password(acc)
+                    print(f"{acc} password deleted\n")
+                else:
+                    print("Password doesn't exist\n")
             else:
-                print("Password doesn't exist\n")
+                print("\nOh no. Wrong password. Try Again\n")
         elif command == "view":
             pass_word = input("Enter your password\n")
             if pass_word == user_pass:

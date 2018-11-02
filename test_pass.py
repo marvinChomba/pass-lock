@@ -12,11 +12,14 @@ class TestPass(unittest.TestCase):
         self. new_password = Password("Facebook","marvin-j","kkk")
     
     def tearDown(self):
+        """
+        Will clear the passwords list after each test to avoid it interfering with the tests
+        """
         Password.passwords = []
 
     def test_new_pass(self):
         """
-        This will test whether a new password is added correcly
+        This will test whether a new password is added correctly
         """
         self.assertEqual(self.new_password.account,"Facebook")
         self.assertEqual(self.new_password.username,"marvin-j")
@@ -44,6 +47,9 @@ class TestPass(unittest.TestCase):
         self.assertEqual(len(Password.passwords),1)
 
     def test_display_pass(self):
+        """
+        Will check whether the display_passwords function will return the passwords in the passwords list
+        """
         self.new_password.save_pass()
         new_pass = Password("Twitter","mck",Password.generate_pass(9))
         new_pass.save_pass()
@@ -59,5 +65,6 @@ class TestPass(unittest.TestCase):
     def test_pass_exist(self):
         self.new_password.save_pass()
         self.assertTrue(Password.password_exist("Facebook"))
+
 if __name__ == "__main__":
     unittest.main()
