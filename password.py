@@ -1,4 +1,5 @@
 from random import randint
+
 class Password:
     """
     This is the class which we will use to create the passwords
