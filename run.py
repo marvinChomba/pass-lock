@@ -8,6 +8,8 @@ def new_user(login,password):
     Args:
         login - user name
         password - the user's password
+    Return:
+        the new user instance
     """
     return User(login,password)
 
